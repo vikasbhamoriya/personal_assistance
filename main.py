@@ -139,14 +139,14 @@ def self_introduction():
 if __name__=="__main__":
     print("start.....")  
     while True:
-        start_buddy = input("user: ")
-        # start_buddy = TakeCommand().lower()
+        # start_buddy = input("user: ")
+        start_buddy = TakeCommand().lower()
         if "ok buddy" == start_buddy or  "hello buddy" ==start_buddy or "hey buddy"==start_buddy:
             WishMe()
             program = True
             while program:
-                # query = TakeCommand().lower()
-                query = input("user:- ")
+                query = TakeCommand().lower()
+                # query = input("user:- ")   
                 query_word_list= query.split()
                 if (query_word_list[0]=="exit"or query_word_list[0]== "exit" or "shutdown"==query_word_list[0]):
                     speak("buddy system is shutting down")
@@ -182,8 +182,7 @@ if __name__=="__main__":
                 else:
                     speak("sorry i can't understand")
                 if(query=="tell me about yourself"):
-                    self_introduction()
-                    # os.open('buddy_history')      
+                    self_introduction()  
         elif (start_buddy=="stop"):
             break
 
